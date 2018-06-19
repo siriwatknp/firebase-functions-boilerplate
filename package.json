@@ -1,0 +1,44 @@
+{
+  "name": "firebase-functions-boilerplate",
+  "version": "1.0.0",
+  "keywords": [
+    "firebase",
+    "firebase-functions",
+    "cloud functions",
+    "es6+",
+    "babel"
+  ],
+  "description": "a boilerplate for start writing firebase cloud functions (support ES6)",
+  "main": "index.js",
+  "author": "Siriwat Kunaporn",
+  "license": "MIT",
+  "scripts": {
+    "fblogin": "yarn firebase login",
+    "funcs:build": "babel src/functions --out-dir dist/functions --copy-files --ignore 'node_modules'",
+    "funcs:clean": "rimraf dist/functions",
+    "funcs:copy": "cpx '*{package.json,yarn.lock}' dist/functions",
+    "funcs:install": "cd dist/functions && yarn",
+    "funcs:shell": "yarn firebase experimental:functions:shell",
+    "dev": "babel src/functions --watch --out-dir dist/functions --copy-files --ignore 'node_modules'",
+    "serve": "firebase serve --only functions",
+    "predeploy": "yarn funcs:clean && yarn funcs:build && yarn funcs:copy && yarn funcs:install",
+    "deploy:staging": "yarn run predeploy && firebase deploy -P staging --only functions",
+    "deploy:production": "yarn run predeploy && firebase deploy -P production --only functions"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.0.4",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "cpx": "^1.5.0",
+    "firebase-tools": "^3.18.4",
+    "rimraf": "^2.6.2"
+  }
+}

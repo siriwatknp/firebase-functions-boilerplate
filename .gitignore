@@ -1,0 +1,7 @@
+
+node_modules/
+dist/
+
+.idea
+src/functions/staging-service-account.json
+src/functions/production-service-account.json

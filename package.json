@@ -21,9 +21,9 @@
     "funcs:shell": "yarn firebase experimental:functions:shell",
     "dev": "babel src/functions --watch --out-dir dist/functions --copy-files --ignore 'node_modules'",
     "serve": "firebase serve --only functions",
-    "predeploy": "yarn funcs:clean && yarn funcs:build && yarn funcs:copy && yarn funcs:install",
-    "deploy:staging": "yarn run predeploy && firebase deploy -P staging --only functions",
-    "deploy:production": "yarn run predeploy && firebase deploy -P production --only functions"
+    "install:packages": "yarn funcs:clean && yarn funcs:build && yarn funcs:copy && yarn funcs:install",
+    "deploy:staging": "yarn install:packages && firebase deploy -P staging --only functions",
+    "deploy:production": "yarn install:packages && firebase deploy -P production --only functions"
   },
   "dependencies": {
     "cors": "^2.8.4",

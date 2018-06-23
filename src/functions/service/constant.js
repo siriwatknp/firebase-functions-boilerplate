@@ -3,15 +3,19 @@ import admin from 'firebase-admin'
 import isEmpty from 'lodash/isEmpty'
 import LOCAL_ENV from './localEnv'
 import stagingServiceAccount from 'staging-service-account.json'
+import productionServiceAccount from 'production-service-account.json'
 
 const constants = {
   production: {
-    adminConfig: {},
+    adminConfig: {
+      credential: admin.credential.cert(productionServiceAccount),
+      databaseURL: '<production-database-url>',
+    }
   },
   staging: {
     adminConfig: {
       credential: admin.credential.cert(stagingServiceAccount),
-      databaseURL: 'https://assez-staging.firebaseio.com',
+      databaseURL: '<staging-database-url>',
     }
   }
 }

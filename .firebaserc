@@ -1,6 +1,6 @@
 {
   "projects": {
-    "staging": "assez-staging",
-    "production": "assez-9815e"
+    "staging": "<project-id>",
+    "production": "<project-id>"
   }
 }

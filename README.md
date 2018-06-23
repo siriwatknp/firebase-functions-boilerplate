@@ -1,23 +1,23 @@
-#firebase-functions-boilerplate
+# firebase-functions-boilerplate
 
-READY-TO-USE project for real-world firebase cloud functions
+READY-TO-USE repo for real-world firebase cloud functions
 
-####Features
+#### Features
 - hot-reloading in development mode
 - deployment (staging, production)
 - support ES6 syntax
 - support absolute import
 - simple, configurable, and extendable
 
-##WHY?
+## WHY?
 I am a real fan of firebase services. I love cloud functions because it connects other firebase services together which allow us 
-to create magical things. However, we have to write it in ES5 and it annoyed me a lot. Fotunately, I found this that explain
+to create magical things. However, we have to write it in ES5 and it annoyed me a lot. Fortunately, I found this [story from James Hegedus](https://codeburst.io/es6-in-cloud-functions-for-firebase-2-415d15205468) explains
 how to use ES6 in cloud functions. But it is not enough, because I want to use it in dev and production too. So, I made a little changes with
-some hacky things to make hot-reloading and continuous deployment available. I hope this project can save you some time. Feel free to suggest and comment.
+some basic knowledge to make hot-reloading and continuous deployment available. I hope this project can save you some time. Feel free to suggest and comment.
 
-##SET UP + HOW TO USE
-1. create a project in [firebase console](https://firebase.google.com/)
-2. install firebase-tools globally
+## SET UP + HOW TO USE
+1. Create a project in [firebase console](https://firebase.google.com/)
+2. Install firebase-tools globally
 
     ```
     npm install -g firebase-tools 
@@ -26,21 +26,25 @@ some hacky things to make hot-reloading and continuous deployment available. I h
     ```
     yarn global add firebase-tools
     ```
-3. login firebase in terminal
+3. Login firebase in terminal
     ```
     firebase login
     ```
-4. go to file .firebaserc in this directory, add your project-id
+4. Go to file .firebaserc in this directory, add your project-id
     ```
     "staging": "<project-id>",
     "production": "<project-id>"
     ```
-5. run this command to create build directory
+    or you can use firebase cli
+    ```
+    firebase use --add
+    ```
+5. Run this command to create build directory
     ```
     yarn install:packages
     ```
     \** ***if you install new packages, you need to run this cmd before dev*** **
-6. run this command in console
+6. Run this command in console
     ```
     yarn dev
     ```
@@ -51,8 +55,8 @@ some hacky things to make hot-reloading and continuous deployment available. I h
     yarn serve
     ```
     _create firebase emulator which enables local http function test_
-7. make changes in `./src/functions`
-8. open browser | postman with
+7. Make changes in `./src/functions`
+8. Open browser | postman with
     ```
     
     ```
@@ -63,7 +67,7 @@ some hacky things to make hot-reloading and continuous deployment available. I h
     change 'staging' => 'production'
     ```
 
-##Deployment
+## Deployment
     
     yarn deploy:staging
     

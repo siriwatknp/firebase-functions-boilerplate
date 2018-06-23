@@ -19,8 +19,10 @@
     "funcs:copy": "cpx '*{package.json,yarn.lock}' dist/functions",
     "funcs:install": "cd dist/functions && yarn",
     "funcs:shell": "yarn firebase experimental:functions:shell",
+    "set:staging-config": "firebase use staging && firebase functions:config:set environment.stage=staging && yarn deploy:staging",
+    "set:production-config": "firebase use production && firebase functions:config:set environment.stage=production && yarn deploy:production",
     "dev": "babel src/functions --watch --out-dir dist/functions --copy-files --ignore 'node_modules'",
-    "serve": "firebase serve --only functions",
+    "serve": "firebase use staging && firebase serve --only functions",
     "install:packages": "yarn funcs:clean && yarn funcs:build && yarn funcs:copy && yarn funcs:install",
     "deploy:staging": "yarn install:packages && firebase deploy -P staging --only functions",
     "deploy:production": "yarn install:packages && firebase deploy -P production --only functions"

@@ -1,10 +1,10 @@
 import express from 'express'
-import { service } from 'config/service'
+import { adminService } from 'service'
 
 const app = express()
 
 app.get('/:id', (req, res) => {
-  service.database()
+  adminService.database()
     .ref(`/users/${req.params.id}`)
     .once('value')
     .then((snapshot) => snapshot.val())

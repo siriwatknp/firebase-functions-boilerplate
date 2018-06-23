@@ -44,7 +44,12 @@ some basic knowledge to make hot-reloading and continuous deployment available. 
     yarn install:packages
     ```
     \** ***if you install new packages, you need to run this cmd before dev*** **
-6. Run this command in console
+6. Add service account file to `./src/functions/`
+   
+   You can find service account from your project [here](https://firebase.google.com/docs/admin/setup#add_firebase_to_your_app)
+   
+   After that, change databaseURL to your staging and production project in `./src/functions/service/constant.js`
+7. Run this command in console
     ```
     yarn dev
     ```
@@ -55,24 +60,40 @@ some basic knowledge to make hot-reloading and continuous deployment available. 
     yarn serve
     ```
     _create firebase emulator which enables local http function test_
-7. Make changes in `./src/functions`
-8. Open browser | postman with
+8. Make changes in `./src/functions/controllers`
+9. Open browser | postman with
     ```
-    
+    http://localhost:5000/<staging-project-id>/us-central1/api
     ```
-9. If you want to test functions locally with production database, go to
+10. If you want to test functions locally on production services, go to
  
-    `./src/functions/config/localEnv.js`
+    `./src/functions/service/localEnv.js`
     ```
     change 'staging' => 'production'
     ```
+11. set up config for 1st time (cloud functions use Google App Engine)
+    by running
+    
+    ```
+    yarn set:staging-config
+    ```
+    then
+    ```
+    yarn set:production-config
+    ```
 
 ## Deployment
+
+ 
+deploy to staging project
+```
+yarn deploy:staging
+```
     
-    yarn deploy:staging
-    
-   or 
-   
-    yarn deploy:production
+or deploy to production project
+```
+yarn deploy:production
+```
+
   
 

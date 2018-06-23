@@ -1,0 +1,43 @@
+[debug] [2018-06-23T05:54:11.084Z] ----------------------------------------------------------------------
+[debug] [2018-06-23T05:54:11.086Z] Command:       /usr/local/bin/node /Users/siriwatkunaporn/Documents/Personal/Projects/firebase-functions-boilerplate/node_modules/.bin/firebase serve --only functions
+[debug] [2018-06-23T05:54:11.086Z] CLI Version:   3.18.6
+[debug] [2018-06-23T05:54:11.086Z] Platform:      darwin
+[debug] [2018-06-23T05:54:11.086Z] Node Version:  v8.11.1
+[debug] [2018-06-23T05:54:11.087Z] Time:          Sat Jun 23 2018 12:54:11 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:11.087Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-23T05:54:11.096Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-23T05:54:11.096Z] > authorizing via signed-in user
+[debug] [2018-06-23T05:54:11.101Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-06-23T05:54:11.101Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/HUbOhnmlgNu6RtECD_eWzU61ReDBuRVz4DDUnWI9sIY',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Jun 23 2018 12:54:11 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:11.436Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-23T05:54:11.455Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/assez-staging  
+  
+ Sat Jun 23 2018 12:54:11 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:12.760Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-23T05:54:12.761Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/assez-staging/tokens  
+  
+ Sat Jun 23 2018 12:54:12 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:13.889Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-23T05:54:13.889Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/assez-staging  
+  
+ Sat Jun 23 2018 12:54:13 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:15.423Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/siriwatkunaporn/Documents/Personal/Projects/firebase-functions-boilerplate'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-06-23T05:54:16.257Z] Fetching environment
+[debug] [2018-06-23T05:54:16.259Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/973156348477:getServerAppConfig  
+  
+ Sat Jun 23 2018 12:54:16 GMT+0700 (+07)
+[debug] [2018-06-23T05:54:17.217Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-23T05:54:17.217Z] Starting @google-cloud/functions-emulator
+[debug] [2018-06-23T05:54:18.789Z] Parsing function triggers
+[info] ✔  functions: api: http://localhost:5000/assez-staging/us-central1/api

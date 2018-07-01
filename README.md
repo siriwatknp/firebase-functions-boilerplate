@@ -16,7 +16,7 @@ how to use ES6 in cloud functions. But it is not enough, because I want to use i
 some basic knowledge to make hot-reloading and continuous deployment available. I hope this project can save you some time. Feel free to suggest and comment.
 
 ## SET UP + HOW TO USE
-1. Create a project in [firebase console](https://firebase.google.com/)
+1. Create 2 projects in [firebase console](https://firebase.google.com/) (1 for staging, 1 for production)
 2. Install firebase-tools globally
 
     ```
@@ -41,7 +41,7 @@ some basic knowledge to make hot-reloading and continuous deployment available. 
     ```
 5. Run this command to create build directory
     ```
-    yarn install:packages
+    yarn && yarn install:packages
     ```
     \** ***if you install new packages, you need to run this cmd before dev*** **
 6. Add service account file to `./src/functions/`
@@ -59,6 +59,7 @@ some basic knowledge to make hot-reloading and continuous deployment available. 
     ```
     yarn serve
     ```
+    ** note: recommend to use node v6.11.5, node > 8 may fail **
     _create firebase emulator which enables local http function test_
 8. Make changes in `./src/functions/controllers`
 9. Open browser | postman with
